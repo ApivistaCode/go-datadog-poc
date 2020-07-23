@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/DataDog/datadog-go/statsd"
-	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
 	"log"
 	"math/rand"
 	"time"
@@ -14,8 +13,7 @@ func main() {
 		log.Fatalf("fatal level", err)
 	}
 
-	tracer.Start(tracer.WithAgentAddr("datadog-agent:8126"), tracer.WithAnalytics(true))
-	defer tracer.Stop()
+
 
 	var i float64
 
